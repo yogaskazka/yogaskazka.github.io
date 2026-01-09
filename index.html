@@ -3,161 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoga Skazka — Твое пространство мягкости</title>
+    <title>Yoga Skazka — Твой осознанный путь</title>
     <style>
+        /* Общие настройки мягкости */
+        :root {
+            --soft-peach: #fffaf5;
+            --dusty-rose: #e5989b;
+            --sage: #b8c1b0;
+            --text-color: #5d5752;
+        }
+
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #5a5a5a;
+            color: var(--text-color);
             /* ТРЕТЬЕ ФОТО: ФОН САЙТА */
             background: url('bg.jpg') no-repeat center center fixed;
             background-size: cover;
         }
 
-        .overlay {
-            background: rgba(255, 252, 249, 0.88); /* Теплый молочный оттенок */
+        .main-overlay {
+            background: rgba(255, 250, 245, 0.9); /* Очень нежная молочная дымка */
             min-height: 100vh;
-            padding-bottom: 60px;
+            padding: 40px 20px;
         }
 
         header {
             text-align: center;
-            padding: 60px 20px 40px;
+            margin-bottom: 50px;
         }
 
-        .logo {
-            font-size: 36px;
-            font-family: 'Georgia', serif; /* Более мягкий, классический шрифт */
+        .brand-name {
+            font-size: 38px;
+            font-family: 'Georgia', serif;
             font-style: italic;
-            letter-spacing: 2px;
             color: #8d7766;
+            margin: 0;
         }
 
         .container {
             max-width: 650px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        .section-card {
-            background: white;
-            border-radius: 40px; /* Очень мягкие края */
+        /* Карточки с супер-закругленными углами */
+        .card {
+            background: #ffffff;
+            border-radius: 50px; /* Экстремально мягкие края */
             overflow: hidden;
-            margin-bottom: 35px;
-            box-shadow: 0 15px 40px rgba(141, 119, 102, 0.1); /* Мягкая коричневатая тень */
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(141, 119, 102, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
-        .card-img {
+        .card-image {
             width: 100%;
-            height: 320px;
+            height: 350px;
             object-fit: cover;
         }
 
-        .card-text {
-            padding: 35px;
+        .card-content {
+            padding: 40px;
             text-align: center;
         }
 
         h2 {
-            font-size: 24px;
-            margin: 0 0 15px 0;
+            font-family: 'Georgia', serif;
+            font-weight: normal;
+            font-size: 26px;
             color: #7a6657;
-            font-weight: 500;
+            margin-bottom: 20px;
         }
 
         p {
             font-size: 17px;
-            line-height: 1.7;
-            margin: 0;
+            line-height: 1.8;
             color: #777;
         }
 
-        /* МЯГКИЕ КНОПКИ СОЦСЕТЕЙ */
-        .social-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 25px;
+        /* Кнопки-овалы */
+        .social-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .btn-social {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .social-link {
+            display: block;
             padding: 20px;
-            border-radius: 30px; /* Скругленные кнопки-овалы */
+            border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 16px;
             color: white;
             transition: all 0.3s ease;
-            font-size: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .btn-social:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        .social-link:hover {
+            transform: scale(1.02);
+            filter: brightness(1.05);
         }
 
-        /* Пастельные дружелюбные цвета */
-        .tg { background-color: #7eb6d9; } /* Мягкий голубой */
-        .inst { background-color: #e5989b; } /* Пыльная роза */
-        .yt { background-color: #f28482; } /* Нежный коралловый */
-        .fb { background-color: #84a59d; } /* Мягкий шалфей */
+        /* Нежные цвета для кнопок */
+        .telegram { background-color: #a2c4d9; }
+        .instagram { background-color: #dbb3b5; }
+        .youtube { background-color: #e8a5a5; }
+        .facebook { background-color: #b0c4b1; }
 
         footer {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px;
             color: #b5a496;
             font-size: 14px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        @media (max-width: 480px) {
-            .social-buttons {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 600px) {
+            .card { border-radius: 35px; }
+            .brand-name { font-size: 30px; }
         }
     </style>
 </head>
 <body>
 
-<div class="overlay">
+<div class="main-overlay">
     <header>
-        <div class="logo">Yoga Skazka</div>
+        <h1 class="brand-name">Yoga Skazka</h1>
     </header>
 
     <div class="container">
         
-        <div class="section-card">
-            <img src="yoga-choice.jpg" alt="Осознанный выбор" class="card-img">
-            <div class="card-text">
+        <div class="card">
+            <img src="yoga-choice.jpg" alt="Йога выбор" class="card-image">
+            <div class="card-content">
                 <h2>Йога — это осознанный выбор</h2>
-                <p>Помогаю девушкам по всему миру раскрывать свою гибкость и внутреннюю силу через осознанные онлайн-практики.</p>
+                <p>Помогаю девушкам по всему миру раскрывать свою гибкость и внутреннюю силу через мягкие онлайн-практики.</p>
             </div>
         </div>
 
-        <div class="section-card">
-            <img src="practice-space.jpg" alt="Пространство" class="card-img">
-            <div class="card-text">
+        <div class="card">
+            <img src="practice-space.jpg" alt="Пространство" class="card-image">
+            <div class="card-content">
                 <h2>Свободное пространство для практики</h2>
-                <p>Твое личное место силы, доступное из любого уголка планеты. Погрузись в атмосферу заботы о себе.</p>
+                <p>Твое личное место силы, которое всегда с тобой. Практикуй в удобном ритме, создавая гармонию внутри себя.</p>
             </div>
         </div>
 
-        <div class="social-buttons">
-            <a href="ССЫЛКА_ТЕЛЕГРАМ" class="btn-social tg" target="_blank">Telegram</a>
-            <a href="ССЫЛКА_ИНСТАГРАМ" class="btn-social inst" target="_blank">Instagram</a>
-            <a href="ССЫЛКА_YOUTUBE" class="btn-social yt" target="_blank">YouTube</a>
-            <a href="ССЫЛКА_FACEBOOK" class="btn-social fb" target="_blank">Facebook</a>
+        <div class="social-menu">
+            <a href="https://t.me/ВАШ_НИК" class="social-link telegram" target="_blank">Присоединиться в Telegram</a>
+            <a href="https://instagram.com/ВАШ_НИК" class="social-link instagram" target="_blank">Найти в Instagram</a>
+            <a href="https://youtube.com/ВАШ_КАНАЛ" class="social-link youtube" target="_blank">Смотреть на YouTube</a>
+            <a href="https://facebook.com/ВАШ_ПРОФИЛЬ" class="social-link facebook" target="_blank">Мы на Facebook</a>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Yoga Skazka</p>
+        <p>Yoga Skazka &copy; 2026</p>
     </footer>
 </div>
 
