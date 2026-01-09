@@ -26,14 +26,18 @@
             content: "";
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.7); 
+            background: rgba(0, 0, 0, 0.6); 
             z-index: -1;
         }
 
         .container { 
-            max-width: 500px; 
-            padding: 60px 20px; 
-            z-index: 1; 
+            max-width: 600px; 
+            padding: 40px 20px; 
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
         }
 
         .logo-box {
@@ -44,6 +48,7 @@
             border: 1px solid rgba(255, 182, 193, 0.5);
             margin: 0 auto 30px;
             background-color: #111;
+            transition: all 0.3s ease;
         }
         .logo-box img { width: 100%; height: 100%; object-fit: cover; }
         
@@ -51,40 +56,53 @@
         .pink { color: #ffb6c1; font-size: 1rem; margin-bottom: 35px; letter-spacing: 1px; }
         
         h2 { font-size: 1.3rem; font-weight: 300; margin-top: 40px; }
-        p { font-size: 0.95rem; line-height: 1.6; opacity: 0.8; margin-bottom: 20px; }
+        p { font-size: 1rem; line-height: 1.6; opacity: 0.9; margin-bottom: 20px; }
         
-        .socials { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .socials { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
         .socials a {
             color: #fff;
             text-decoration: none;
-            padding: 10px 22px;
+            padding: 12px 28px;
             border: 1px solid rgba(255, 182, 193, 0.4);
-            border-radius: 25px;
-            font-size: 0.85rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
             transition: 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
         }
-        .socials a:hover { background: #ffb6c1; color: #000; border-color: #ffb6c1; }
+        .socials a:hover { background: #ffb6c1; color: #000; border-color: #ffb6c1; transform: scale(1.05); }
         
-        footer { margin-top: auto; padding: 40px 0; font-size: 0.85rem; opacity: 0.6; letter-spacing: 1px; }
+        footer { padding: 40px 0; font-size: 0.85rem; opacity: 0.6; letter-spacing: 1px; z-index: 1; }
+
+        /* Настройки для ПК (экраны шире 768px) */
+        @media (min-width: 768px) {
+            .container { max-width: 900px; }
+            .logo-box { width: 180px; height: 180px; margin-bottom: 40px; }
+            h1 { font-size: 3rem; letter-spacing: 5px; }
+            .pink { font-size: 1.4rem; margin-bottom: 50px; }
+            h2 { font-size: 2rem; }
+            p { font-size: 1.4rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+            .socials { gap: 25px; }
+            .socials a { font-size: 1.2rem; padding: 15px 40px; }
+            footer { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo-box">
-            <img src="logo.png" alt="Karina Logo">
+            <img src="logo.png" alt="Logo">
         </div>
 
         <h1>Твоя Йога</h1>
         <div class="pink">Йога — это осознанный выбор</div>
 
-        <p>Помогаю девушкам по всему миру обрести гармонию и баланс через практику Хатха - йоги.</p>
+        <p>Помогаю девушкам по всему миру обрести гармонию и баланс через мягкие практики.</p>
         
         <h2>Свободное пространство для практики</h2>
         <p>Твое личное место силы, которое всегда с тобой.</p>
 
         <div class="socials">
             <a href="https://youtube.com/@mirlovemur" target="_blank">YouTube</a>
-            <a href="https://www.facebook.com/share/1DCnKKoEVF/" target="_blank">Facebook</a>
             <a href="https://www.instagram.com/mirlovemur?igsh=MXdqeW9qNmtrdmM5OA==" target="_blank">Instagram</a>
             <a href="https://t.me/miryoga" target="_blank">Telegram</a>
         </div>
@@ -93,3 +111,4 @@
     <footer>Karina Skazka 2026</footer>
 </body>
 </html>
+
