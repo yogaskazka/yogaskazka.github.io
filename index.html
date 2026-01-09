@@ -3,170 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoga Skazka — Твой осознанный путь</title>
+    <title>Йога Сказка — Твоя Йога</title>
     <style>
-        /* Общие настройки мягкости */
-        :root {
-            --soft-peach: #fffaf5;
-            --dusty-rose: #e5989b;
-            --sage: #b8c1b0;
-            --text-color: #5d5752;
-        }
-
+        /* Основные настройки */
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--text-color);
-            /* ТРЕТЬЕ ФОТО: ФОН САЙТА */
-            background: url('bg.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-
-        .main-overlay {
-            background: rgba(255, 250, 245, 0.9); /* Очень нежная молочная дымка */
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        header {
+            background-color: #000; /* Черный фон */
+            color: #fff;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            margin-bottom: 50px;
+            min-height: 100vh;
+            /* Фон с лотосами (белые цветы, розовые элементы) */
+            background-image: url('https://images.unsplash.com/photo-1536633100227-669352e82500?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
-        .brand-name {
-            font-size: 38px;
-            font-family: 'Georgia', serif;
-            font-style: italic;
-            color: #8d7766;
-            margin: 0;
+        /* Затемнение для читаемости */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: -1;
         }
 
         .container {
-            max-width: 650px;
-            margin: 0 auto;
+            max-width: 800px;
+            padding: 50px 20px;
+            z-index: 1;
         }
 
-        /* Карточки с супер-закругленными углами */
-        .card {
-            background: #ffffff;
-            border-radius: 50px; /* Экстремально мягкие края */
+        /* Круглый логотип */
+        .logo-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 30px;
+            border-radius: 50%; /* Делает круглым */
             overflow: hidden;
-            margin-bottom: 40px;
-            box-shadow: 0 15px 35px rgba(141, 119, 102, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 2px solid #ffb6c1; /* Розовая рамка в цвет листиков */
+            box-shadow: 0 0 20px rgba(255, 182, 193, 0.3);
         }
 
-        .card-image {
+        .logo-container img {
             width: 100%;
-            height: 350px;
+            height: 100%;
             object-fit: cover;
         }
 
-        .card-content {
-            padding: 40px;
-            text-align: center;
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 200;
         }
 
-        h2 {
-            font-family: 'Georgia', serif;
-            font-weight: normal;
-            font-size: 26px;
-            color: #7a6657;
-            margin-bottom: 20px;
+        .subtitle {
+            font-size: 1.4rem;
+            color: #ffb6c1; /* Розовый цвет */
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .content-block {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(5px);
         }
 
         p {
-            font-size: 17px;
             line-height: 1.8;
-            color: #777;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin: 15px 0;
         }
 
-        /* Кнопки-овалы */
-        .social-menu {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
+        /* Соцсети */
+        .social-nav {
+            margin-top: 30px;
         }
 
-        .social-link {
-            display: block;
-            padding: 20px;
-            border-radius: 40px;
+        .social-nav a {
+            color: #fff;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            color: white;
+            margin: 0 12px;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 182, 193, 0.5);
+            border-radius: 30px;
             transition: all 0.3s ease;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .social-link:hover {
-            transform: scale(1.02);
-            filter: brightness(1.05);
+        .social-nav a:hover {
+            background: #ffb6c1;
+            color: #000;
+            border-color: #ffb6c1;
         }
-
-        /* Нежные цвета для кнопок */
-        .telegram { background-color: #a2c4d9; }
-        .instagram { background-color: #dbb3b5; }
-        .youtube { background-color: #e8a5a5; }
-        .facebook { background-color: #b0c4b1; }
 
         footer {
-            text-align: center;
-            margin-top: 60px;
-            color: #b5a496;
-            font-size: 14px;
+            margin-top: auto;
+            padding: 40px 0;
+            font-size: 0.9rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 600px) {
-            .card { border-radius: 35px; }
-            .brand-name { font-size: 30px; }
+            color: rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
 <body>
 
-<div class="main-overlay">
-    <header>
-        <h1 class="brand-name">Yoga Skazka</h1>
-    </header>
-
     <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Йога Сказка Логотип">
+        </div>
+
+        <h1>Твоя Йога</h1>
         
-        <div class="card">
-            <img src="yoga-choice.jpg" alt="Йога выбор" class="card-image">
-            <div class="card-content">
-                <h2>Йога — это осознанный выбор</h2>
-                <p>Помогаю девушкам по всему миру раскрывать свою гибкость и внутреннюю силу через мягкие онлайн-практики.</p>
-            </div>
+        <div class="subtitle">Йога — это осознанный выбор</div>
+
+        <div class="content-block">
+            <p>Помогаем девушкам по всему миру обрести гармонию через движение и дыхание.</p>
+            <p><strong>Свободное пространство для практики.</strong><br>
+            Твое личное место силы, которое всегда с тобой.</p>
         </div>
 
-        <div class="card">
-            <img src="practice-space.jpg" alt="Пространство" class="card-image">
-            <div class="card-content">
-                <h2>Свободное пространство для практики</h2>
-                <p>Твое личное место силы, которое всегда с тобой. Практикуй в удобном ритме, создавая гармонию внутри себя.</p>
-            </div>
-        </div>
-
-        <div class="social-menu">
-            <a href="https://t.me/ВАШ_НИК" class="social-link telegram" target="_blank">Присоединиться в Telegram</a>
-            <a href="https://instagram.com/ВАШ_НИК" class="social-link instagram" target="_blank">Найти в Instagram</a>
-            <a href="https://youtube.com/ВАШ_КАНАЛ" class="social-link youtube" target="_blank">Смотреть на YouTube</a>
-            <a href="https://facebook.com/ВАШ_ПРОФИЛЬ" class="social-link facebook" target="_blank">Мы на Facebook</a>
-        </div>
-
+        <nav class="social-nav">
+            <a href="#">Telegram</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+            <a href="#">Facebook</a>
+        </nav>
     </div>
 
     <footer>
-        <p>Yoga Skazka &copy; 2026</p>
+        ЙОГА СКАЗКА &copy; 2026
     </footer>
-</div>
 
 </body>
 </html>
