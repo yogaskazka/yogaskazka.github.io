@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #000; /* Черный фон */
+            background-color: #000; /* Черный фон по умолчанию */
             color: #fff;
             font-family: 'Helvetica Neue', Arial, sans-serif;
             display: flex;
@@ -16,8 +16,8 @@
             align-items: center;
             text-align: center;
             min-height: 100vh;
-            /* Эстетичный фон: лотосы */
-            background-image: url('https://images.unsplash.com/photo-1536633100227-669352e82500?q=80&w=2070&auto=format&fit=crop'); 
+            /* Путь к вашему фону в GitHub */
+            background-image: url('bg.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -27,7 +27,7 @@
             content: "";
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.85); /* Глубокое затемнение */
+            background: rgba(0, 0, 0, 0.8); /* Затемнение */
             z-index: -1;
         }
 
@@ -36,18 +36,17 @@
             padding: 50px 20px;
         }
 
-        /* Твой круглый логотип */
-        .logo-box {
+        .logo-circle {
             width: 170px;
             height: 170px;
             border-radius: 50%;
             overflow: hidden;
-            border: 2px solid #ffb6c1; /* Розовый кант */
+            border: 2px solid #ffb6c1;
             margin: 0 auto 30px;
-            box-shadow: 0 0 15px rgba(255, 182, 193, 0.2);
+            background: #111;
         }
 
-        .logo-box img {
+        .logo-circle img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -62,52 +61,38 @@
         }
 
         .motto {
-            color: #ffb6c1; /* Розовый акцент */
+            color: #ffb6c1;
             font-size: 1.3rem;
             margin-bottom: 40px;
-            font-style: italic;
         }
 
-        .section {
+        .text-block {
             margin-bottom: 40px;
-        }
-
-        h2 {
-            font-weight: 300;
-            font-size: 1.7rem;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        p {
             line-height: 1.8;
-            opacity: 0.85;
             font-size: 1.1rem;
+            opacity: 0.9;
         }
 
-        /* Кнопки соцсетей */
-        .social-buttons {
+        .socials {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
             margin-top: 30px;
         }
 
-        .social-buttons a {
+        .socials a {
             color: #fff;
             text-decoration: none;
             padding: 12px 25px;
             border: 1px solid rgba(255, 182, 193, 0.5);
             border-radius: 40px;
-            font-size: 0.95rem;
-            transition: 0.3s ease;
+            transition: 0.3s;
         }
 
-        .social-buttons a:hover {
+        .socials a:hover {
             background: #ffb6c1;
             color: #000;
-            border-color: #ffb6c1;
         }
 
         footer {
@@ -115,7 +100,6 @@
             padding: 50px 0;
             font-size: 0.9rem;
             letter-spacing: 3px;
-            text-transform: uppercase;
             color: rgba(255, 255, 255, 0.5);
         }
     </style>
@@ -123,23 +107,23 @@
 <body>
 
     <div class="container">
-        <div class="logo-box">
+        <div class="logo-circle">
             <img src="logo.png" alt="Logo">
         </div>
 
         <h1>Твоя Йога</h1>
         <div class="motto">Йога — это осознанный выбор</div>
 
-        <div class="section">
-            <p>Помогаю девушкам по всему миру обрести гармонию через мягкие практики и осознанность.</p>
+        <div class="text-block">
+            <p>Помогаем девушкам по всему миру обрести гармонию через мягкие практики и осознанность.</p>
         </div>
 
-        <div class="section">
+        <div class="text-block">
             <h2>Свободное пространство для практики</h2>
             <p>Твое личное место силы, которое всегда с тобой.</p>
         </div>
 
-        <div class="social-buttons">
+        <div class="socials">
             <a href="#">Telegram</a>
             <a href="#">Instagram</a>
             <a href="#">YouTube</a>
@@ -148,9 +132,9 @@
     </div>
 
     <footer>
-        Yoga Skazka 2026
+        YOGA SKAZKA 2026
     </footer>
 
 </body>
-</html> 
+</html>
 
